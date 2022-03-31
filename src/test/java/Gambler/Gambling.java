@@ -73,6 +73,34 @@ public class Gambling {
         System.out.println("In 20 Days Total Wins" + countWin);
         System.out.println("In 20 Days Total Loses" + countLose);
     }
+    //UC5
+    
+    public void monthlyCalculate(int winLimit, int loseLimit) {
+        int checkWin = winLimit;
+        int checkLose = loseLimit;
+        int days = 30;
+        int countWin = 0;
+        int countLose = 0;
+        int wonByHowMuch = 0;
+        int loseByHowMuch = 0;
+        for (int index = 0; index < days; index++) {
+
+            int resultOfDay = gamePLay(winLimit, loseLimit);
+            if (resultOfDay == checkWin) {
+                wonByHowMuch = wonByHowMuch + resultOfDay;
+                countWin++;
+            } else if (resultOfDay == checkLose) {
+                loseByHowMuch = loseByHowMuch + resultOfDay;
+                countLose++;
+            }
+        }
+        System.out.println("Monthly Result");
+        System.out.println("In Month Total Wins " + countWin);
+        System.out.println("In Month Total Loses" + countLose);
+        System.out.println(" Won By :- " + wonByHowMuch);
+        System.out.println(" Lose By :- " + loseByHowMuch);
+    }
 }
+
 
 
