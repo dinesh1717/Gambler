@@ -107,6 +107,37 @@ public class Gambling {
         System.out.println(" Won By :- " + wonByHowMuch);
         System.out.println(" Lose By :- " + loseByHowMuch);
     }
+    //UC6
+    public void checkLuckyOrUnluckyDay(int winLimit, int loseLimit) {
+        int checkWin = winLimit;
+        int checkLose = loseLimit;
+        int days = 30;
+        int countWin = 0;
+        int countLose = 0;
+        int day = 0;
+        int luckiestDay = 0;
+        int unLuckiestDay = 0;
+
+        for (int index = 0; index < days; index++, day++) {
+
+            int resultOfDay = gamePLay(winLimit, loseLimit);
+            if (resultOfDay == checkWin) {
+                countWin++;
+                luckiestDay = day;
+                System.out.println("Luckyiest Day " + luckiestDay + "");
+
+            } else if (resultOfDay == checkLose) {
+                countLose++;
+                unLuckiestDay = day;
+                System.out.println(" Unluckyiest Day " + unLuckiestDay);
+            }
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println("Monthly How Many Luckiest Days And Unluckiest Days");
+        System.out.println("In Month Luckiest Days" + countWin);
+        System.out.println("In Month Unluckiest Days" + countLose);
+    }
 
 }
 
